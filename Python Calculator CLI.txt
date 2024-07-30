@@ -1,0 +1,38 @@
+# Dictionary to map operations to lambda functions
+
+operations = {
+    '1': lambda a, b: a + b,    
+    '2': lambda a, b: a - b,    
+    '3': lambda a, b: a * b,
+    '4': lambda a, b: a / b, 
+}
+
+#Function
+
+def choices():
+    print("Simple Command Line Interface Calculator")
+    print("Select choice for operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    
+#User-Input
+    operation = input("Enter your choice (1, 2, 3, 4)")
+    
+    if operation in operations:
+      
+        try:
+            number_one = int(input("Enter your first number: "))
+            number_two = int(input("Enter your second number: "))
+            
+            result = operations[operation](number_one, number_two)
+            print(f"The result is: {result}")
+
+        except ValueError:
+            print("Invalid input! Please enter numeric values.")
+
+    else:
+        print("Invalid your choice")
+
+choices()
